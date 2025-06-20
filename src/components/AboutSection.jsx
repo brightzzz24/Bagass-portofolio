@@ -27,7 +27,7 @@ export const AboutSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
                 {" "}
-                Contact Me 
+                Contact Me
               </a>
             </div>
           </div>
@@ -56,9 +56,9 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">UI/UX Design</h4>
                   <p className="text-muted-foreground">
-                    Memenuhi kebutuhan pengguna yang kompleks menjadi alurAdd
-                    commentMore actions desain yang intuitif dan antarmuka yang
-                    menarik secara visual
+                    Memenuhi kebutuhan pengguna yang kompleks menjadi alur
+                    desain yang intuitif dan antarmuka yang menarik secara
+                    visual
                   </p>
                 </div>
               </div>
