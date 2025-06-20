@@ -7,6 +7,7 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Hobby", href: "#hobby" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -35,7 +36,10 @@ export const Navbar = () => {
           href="#hero"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> Bagas Septio Ramadhani </span>{" "}
+            <span className="text-glow text-foreground">
+              {" "}
+              Bagas Septio Ramadhani{" "}
+            </span>{" "}
             Portfolio
           </span>
         </a>
