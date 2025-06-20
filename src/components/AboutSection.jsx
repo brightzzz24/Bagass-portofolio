@@ -41,9 +41,9 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg"> Web Development</h4>
                   <p className="text-muted-foreground">
-                    Merekayasa aplikasi full-stack yang dinamis dan aman,
-                    denganAdd commentMore actions fokus pada kecepatan,
-                    skalabilitas, dan kode yang dapat dipelihara.
+                    Merekayasa aplikasi full-stack yang dinamis dan aman, dengan
+                    fokus pada kecepatan, skalabilitas, dan kode yang dapat
+                    dipelihara.
                   </p>
                 </div>
               </div>
