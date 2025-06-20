@@ -64,10 +64,10 @@ export const ContactSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Saya antusias untuk mendengar tentang proyek Anda dan bagaimana
-          sayaAdd commentMore actions dapat membantu mewujudkan visi Anda.
-          Silakan tinggalkan pesan, danAdd commentMore actions saya akan
-          menghubungi Anda kembali untuk menjadwalkan diskusi lebih lanjut.
+          Saya antusias untuk mendengar tentang proyek Anda dan bagaimana saya
+          dapat membantu mewujudkan visi Anda. Silakan tinggalkan pesan, dan
+          saya akan menghubungi Anda kembali untuk menjadwalkan diskusi lebih
+          lanjut.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

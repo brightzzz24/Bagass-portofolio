@@ -14,14 +14,13 @@ export const AboutSection = () => {
             <h3 className="text-2xl font-semibold">Senior Web Developer</h3>
 
             <p className="text-muted-foreground">
-              Sebagai seorang developer yang berorientasi pada hasil, sayaAdd
-              commentMore actions berspesialisasi dalam rekayasa (engineering)
-              aplikasi web yang tangguh dan mudah diakses. Saya memiliki rekam
-              jejak dalam mengoptimalkan performa, meningkatkan pengalaman
-              pengguna, dan menerapkan praktik terbaik industri untuk memastikan
-              setiap proyekAdd commentMore actions mencapai standar keunggulan
-              tertinggi. Saya memimpin inovasi dengan menerapkan teknologi
-              terdepan secara strategis.
+              Sebagai seorang developer yang berorientasi pada hasil, saya
+              berspesialisasi dalam rekayasa (engineering) aplikasi web yang
+              tangguh dan mudah diakses. Saya memiliki rekam jejak dalam
+              mengoptimalkan performa, meningkatkan pengalaman pengguna, dan
+              menerapkan praktik terbaik industri untuk memastikan setiap
+              proyek mencapai standar keunggulan tertinggi. Saya memimpin
+              inovasi dengan menerapkan teknologi terdepan secara strategis.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -73,9 +72,9 @@ export const AboutSection = () => {
                   <h4 className="font-semibold text-lg">Project Management</h4>
                   <p className="text-muted-foreground">
                     Mengelola siklus hidup proyek teknologi secara
-                    end-to-end,Add commentMore actions memastikan pengiriman
-                    tepat waktu dan efisien untuk visi proyek dari konsep awal
-                    menjadi produk akhir yang sukses diluncurkan
+                    end-to-end,Add memastikan pengiriman tepat waktu dan efisien
+                    untuk visi proyek dari konsep awal menjadi produk akhir yang
+                    sukses diluncurkan
                   </p>
                 </div>
               </div>
