@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { cn } from "../lib/utils"; // 1. Tambahkan impor untuk cn
+
+// Data 'games' Anda tidak perlu diubah, biarkan seperti ini
 const games = [
   {
     name: "Honkai: Star Rail",
@@ -20,7 +23,6 @@ const games = [
       "https://i.postimg.cc/g0tZ3tMV/Screenshot-2025-05-13-19-24-44-10-6a94144e19573033dd3c8ad4551cc566.jpg",
     ],
   },
-
   {
     name: "Free Fire",
     photos: [
@@ -43,6 +45,9 @@ const games = [
   },
 ];
 
+// 2. Buat daftar kategori game secara dinamis
+const gameCategories = ["All", ...games.map((game) => game.name)];
+
 export const HobbySection = () => {
   const [selectedGame, setSelectedGame] = useState("All");
   const [activeImage, setActiveImage] = useState({ gallery: null, index: 0 });
@@ -61,7 +66,7 @@ export const HobbySection = () => {
   };
 
   const handleNextImage = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     setActiveImage((prev) => {
       const nextIndex = (prev.index + 1) % prev.gallery.length;
       return { ...prev, index: nextIndex };
@@ -80,14 +85,27 @@ export const HobbySection = () => {
   return (
     <>
       <section id="hobby" className="py-24 px-4">
-      
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            My <span className="text-primary">Hobbyy</span>
+            My <span className="text-primary">Hobby</span>
           </h2>
 
+          {/* 3. Tambahkan blok tombol filter di sini */}
           <div className="flex justify-center flex-wrap gap-4 mb-12">
-           
+            {gameCategories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedGame(category)}
+                className={cn(
+                  "px-5 py-2 rounded-full transition-colors duration-300",
+                  selectedGame === category
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary/70 hover:bg-primary/20"
+                )}
+              >
+                {category}
+              </button>
+            ))}
           </div>
 
           <div className="space-y-16">
@@ -98,16 +116,15 @@ export const HobbySection = () => {
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                   {game.photos.map((photo, photoIndex) => (
-                    // 3. Perbarui onClick di sini
                     <div
                       key={photoIndex}
-                      className="bg-card rounded-lg shadow-lg overflow-hidden group cursor-pointer"
+                      className="bg-card rounded-lg shadow-lg overflow-hidden group cursor-pointer border border-border/50 dark:border-border/80 transition-all duration-200 hover:ring-2 hover:ring-white/75"
                       onClick={() => handleImageClick(game.photos, photoIndex)}
                     >
                       <img
                         src={photo}
                         alt={`${game.name} screenshot ${photoIndex + 1}`}
-                        className="aspect-video w-full h-full object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
+                        className="aspect-video w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                   ))}
@@ -118,13 +135,12 @@ export const HobbySection = () => {
         </div>
       </section>
 
-      {/* 4. Tampilan Modal/Popup yang sudah ditingkatkan */}
+      {/* Bagian Modal/Popup tidak ada perubahan */}
       {activeImage.gallery && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex justify-center items-center p-4"
           onClick={handleCloseModal}
         >
-          {/* Tombol Navigasi Kiri */}
           <button
             className="absolute left-4 md:left-8 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
             onClick={handlePrevImage}
@@ -143,24 +159,18 @@ export const HobbySection = () => {
               <path d="m15 18-6-6 6-6" />
             </svg>
           </button>
-
-          {/* Gambar yang Diperbesar */}
           <img
             src={activeImage.gallery[activeImage.index]}
             alt="Enlarged view"
             className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
-            onClick={(e) => e.stopPropagation()} // Mencegah modal tertutup saat gambar diklik
+            onClick={(e) => e.stopPropagation()}
           />
-
-          {/* Tombol Close */}
           <button
             className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 transition-colors z-10"
             onClick={handleCloseModal}
           >
             &times;
           </button>
-
-          {/* Tombol Navigasi Kanan */}
           <button
             className="absolute right-4 md:right-8 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
             onClick={handleNextImage}

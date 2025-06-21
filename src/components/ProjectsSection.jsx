@@ -1,4 +1,3 @@
-// 1. Impor ikon baru yang akan kita gunakan
 import {
   ArrowRight,
   ExternalLink,
