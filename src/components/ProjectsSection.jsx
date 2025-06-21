@@ -17,36 +17,36 @@ import {
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
+    title: "Classy Website",
+    description: "Website Jual Beli Baju Bekas Dengan kualitas yang baik",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
+    tags: ["Html", "TailwindCSS", "Java Script"],
     demoUrl: "#",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Simklinik ",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "Aplikasi Pendaftaran dan penjadwalan serta manajemen data pasien",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
+    tags: ["Java Script", "Netbean",],
     demoUrl: "#",
     githubUrl: "#",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Website Porofolio",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
+      "project website ini ",
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
+    tags: ["React", "Node.js", "Tailwind"],
     demoUrl: "#",
     githubUrl: "#",
   },
 ];
 
-// 2. Komponen baru untuk memilih ikon berdasarkan nama tag
+
 const TechIcon = ({ tag }) => {
   const iconSize = 14; // Ukuran ikon
   const iconClassName = "text-primary";

@@ -9,7 +9,7 @@ export const HeroSection = () => {
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in"> Hai, Saya</span>
+            <span className="opacity-0 animate-fade-in">Saya</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
               Bagass Septio
@@ -21,9 +21,9 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            Seorang pelajar dari universitas Satya Terra Bhinneka, Pengembang
-            Web Developer yang berkharisma dan kompeten, memiliki ide-ide
-            kompleks menciptakan aplikasi web yang elegan dan efisien.
+            Sebagai Front-End Developer, saya berspesialisasi dalam merekayasa
+            UI yang indah, fungsional, dan berpusat pada pengguna menggunakan
+            teknologi web modern.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">

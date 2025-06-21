@@ -1,6 +1,4 @@
-import React, { useState } from "react"; // 1. Impor useState
-
-// --- GANTI DATA DI BAWAH INI DENGAN DATA ANDA ---
+import React, { useState } from "react";
 const games = [
   {
     name: "Honkai: Star Rail",
@@ -26,29 +24,27 @@ const games = [
   {
     name: "Free Fire",
     photos: [
-      "https://i.postimg.cc/rF5x7JmT/Screenshot-2025-06-14-19-17-56-16-c28519d624689b8d548e2809af584b0c.jpg",
-      "https://i.postimg.cc/s2fWQGrZ/Screenshot-2022-07-13-14-52-46-60-c28519d624689b8d548e2809af584b0c.jpg",
       "https://i.postimg.cc/T3Jm3qZ6/Screenshot-2019-10-21-18-44-26-83-998d3425f9e75a0428f0fabdce419960.jpg",
-      "https://i.postimg.cc/sX9bnLLL/Screenshot-2025-06-21-02-14-52-94-c28519d624689b8d548e2809af584b0c.jpg",
+      "https://i.postimg.cc/s2fWQGrZ/Screenshot-2022-07-13-14-52-46-60-c28519d624689b8d548e2809af584b0c.jpg",
+      "https://i.postimg.cc/y6227ppg/Screenshot-2023-05-06-16-33-57-98-c28519d624689b8d548e2809af584b0c.jpg",
+      "https://i.postimg.cc/rF5x7JmT/Screenshot-2025-06-14-19-17-56-16-c28519d624689b8d548e2809af584b0c.jpg",
       "https://i.postimg.cc/jj87zqx3/Screenshot-2025-06-14-01-34-29-59-c28519d624689b8d548e2809af584b0c.jpg",
     ],
   },
   {
-    name: "Zenless Zonee Zeroo",
+    name: "Genshin Impact",
     photos: [
-      "https://i.postimg.cc/t4pZwn7m/Screenshot-2025-02-11-00-35-25-65-7124844c02309b9164e262fc9da42c49.jpg",
-      "https://i.postimg.cc/PrmvSQfw/Screenshot-2025-02-14-14-58-24-59-7124844c02309b9164e262fc9da42c49.jpg",
-      "https://i.postimg.cc/q7vKhHGB/Screenshot-2025-06-06-14-47-10-72-7124844c02309b9164e262fc9da42c49.jpg",
-      "https://i.postimg.cc/50TQRPFw/Screenshot-2024-12-31-08-23-06-76-7124844c02309b9164e262fc9da42c49.jpg",
-      "https://i.postimg.cc/kXrtNpCC/Screenshot-2025-01-02-14-12-41-29-7124844c02309b9164e262fc9da42c49.jpg",
+      "https://i.postimg.cc/76wYtY04/Screenshot-2025-01-01-10-00-53-81-e80eb31669cc7edfbce1531f4d25a535.jpg",
+      "https://i.postimg.cc/tJgRySBm/Screenshot-2024-05-01-03-23-09-35-e80eb31669cc7edfbce1531f4d25a535.jpg",
+      "https://i.postimg.cc/T35wpsfz/Screenshot-2023-06-13-17-04-18-51-e80eb31669cc7edfbce1531f4d25a535.jpg",
+      "https://i.postimg.cc/43zx1hKw/Screenshot-2023-11-17-17-49-06-39-e80eb31669cc7edfbce1531f4d25a535.jpg",
+      "https://i.postimg.cc/8C8CWbCj/Screenshot-2023-10-02-13-44-17-88-e80eb31669cc7edfbce1531f4d25a535.jpg",
     ],
   },
 ];
-// ----------------------------------------------------
 
 export const HobbySection = () => {
   const [selectedGame, setSelectedGame] = useState("All");
-  // 1. Ubah state untuk menyimpan galeri dan indeks gambar yang aktif
   const [activeImage, setActiveImage] = useState({ gallery: null, index: 0 });
 
   const filteredGames =
@@ -64,19 +60,19 @@ export const HobbySection = () => {
     setActiveImage({ gallery: null, index: 0 });
   };
 
-  // 2. Logika baru untuk navigasi gambar
   const handleNextImage = (e) => {
-    e.stopPropagation(); // Mencegah modal tertutup saat tombol diklik
-    setActiveImage(prev => {
+    e.stopPropagation(); 
+    setActiveImage((prev) => {
       const nextIndex = (prev.index + 1) % prev.gallery.length;
       return { ...prev, index: nextIndex };
     });
   };
 
   const handlePrevImage = (e) => {
-    e.stopPropagation(); // Mencegah modal tertutup saat tombol diklik
-    setActiveImage(prev => {
-      const prevIndex = (prev.index - 1 + prev.gallery.length) % prev.gallery.length;
+    e.stopPropagation();
+    setActiveImage((prev) => {
+      const prevIndex =
+        (prev.index - 1 + prev.gallery.length) % prev.gallery.length;
       return { ...prev, index: prevIndex };
     });
   };
@@ -84,25 +80,27 @@ export const HobbySection = () => {
   return (
     <>
       <section id="hobby" className="py-24 px-4">
-        {/* ... Konten section tidak berubah ... */}
+      
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            My <span className="text-primary">Gaming Hobbies</span>
+            My <span className="text-primary">Hobbyy</span>
           </h2>
 
           <div className="flex justify-center flex-wrap gap-4 mb-12">
-            {/* ... Tombol filter tidak berubah ... */}
+           
           </div>
-          
+
           <div className="space-y-16">
             {filteredGames.map((game) => (
               <div key={game.name}>
-                <h3 className="text-2xl font-semibold mb-6 text-left">{game.name}</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-left">
+                  {game.name}
+                </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                   {game.photos.map((photo, photoIndex) => (
                     // 3. Perbarui onClick di sini
-                    <div 
-                      key={photoIndex} 
+                    <div
+                      key={photoIndex}
                       className="bg-card rounded-lg shadow-lg overflow-hidden group cursor-pointer"
                       onClick={() => handleImageClick(game.photos, photoIndex)}
                     >
@@ -122,16 +120,28 @@ export const HobbySection = () => {
 
       {/* 4. Tampilan Modal/Popup yang sudah ditingkatkan */}
       {activeImage.gallery && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-black/90 flex justify-center items-center p-4"
           onClick={handleCloseModal}
         >
           {/* Tombol Navigasi Kiri */}
-          <button 
+          <button
             className="absolute left-4 md:left-8 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
             onClick={handlePrevImage}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
           </button>
 
           {/* Gambar yang Diperbesar */}
@@ -141,9 +151,9 @@ export const HobbySection = () => {
             className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()} // Mencegah modal tertutup saat gambar diklik
           />
-          
+
           {/* Tombol Close */}
-          <button 
+          <button
             className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 transition-colors z-10"
             onClick={handleCloseModal}
           >
@@ -151,11 +161,23 @@ export const HobbySection = () => {
           </button>
 
           {/* Tombol Navigasi Kanan */}
-          <button 
+          <button
             className="absolute right-4 md:right-8 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
             onClick={handleNextImage}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
           </button>
         </div>
       )}

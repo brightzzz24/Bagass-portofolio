@@ -11,16 +11,13 @@ export const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Senior Web Developer</h3>
+            <h3 className="text-2xl font-semibold">Seorang Web Developer</h3>
 
             <p className="text-muted-foreground">
-              Sebagai seorang developer yang berorientasi pada hasil, saya
-              berspesialisasi dalam rekayasa (engineering) aplikasi web yang
-              tangguh dan mudah diakses. Saya memiliki rekam jejak dalam
-              mengoptimalkan performa, meningkatkan pengalaman pengguna, dan
-              menerapkan praktik terbaik industri untuk memastikan setiap
-              proyek mencapai standar keunggulan tertinggi. Saya memimpin
-              inovasi dengan menerapkan teknologi terdepan secara strategis.
+              Saya mahasiswa informatika dari universitas satya terra bhinneka,
+              saya pengembang web yang cukup ahli di bidangnya. saya juga
+              memiliki hobby yaitu bermain game agar tidak terlalu stress karena
+              codingan yang berwana merah"ERROR"
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -40,9 +37,9 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg"> Web Development</h4>
                   <p className="text-muted-foreground">
-                    Merekayasa aplikasi full-stack yang dinamis dan aman, dengan
-                    fokus pada kecepatan, skalabilitas, dan kode yang dapat
-                    dipelihara.
+                    Menciptakan pengalaman web yang mulus dan responsif di semua
+                    perangkat, dengan mengimplementasikan desain yang presisi
+                    menggunakan framework modern.
                   </p>
                 </div>
               </div>
@@ -55,9 +52,8 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">UI/UX Design</h4>
                   <p className="text-muted-foreground">
-                    Memenuhi kebutuhan pengguna yang kompleks menjadi alur
-                    desain yang intuitif dan antarmuka yang menarik secara
-                    visual
+                    Memastikan setiap interaksi pengguna terasa mudah dan alami
+                    melalui desain UI/UX yang terencana dengan baik.
                   </p>
                 </div>
               </div>
@@ -71,10 +67,8 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">Project Management</h4>
                   <p className="text-muted-foreground">
-                    Mengelola siklus hidup proyek teknologi secara
-                    end-to-end,Add memastikan pengiriman tepat waktu dan efisien
-                    untuk visi proyek dari konsep awal menjadi produk akhir yang
-                    sukses diluncurkan
+                    Merekayasa aplikasi web yang responsif dan berperforma
+                    tinggi dengan memanfaatkan kekuatan framework modern.
                   </p>
                 </div>
               </div>
