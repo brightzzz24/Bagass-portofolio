@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { cn } from "../lib/utils";
 import { Crown, Award, Check, ChevronsDown, Star } from "lucide-react";
-
 const games = [
   // Pastikan data Anda sudah terisi di sini
   {
     name: "Honkai: Star Rail",
-    level: 100,
+    level: 90,
     photos: [
       "/hsr/hsr1.png",
       "/hsr/hsr2.png",
@@ -28,7 +27,7 @@ const games = [
   },
   {
     name: "Free Fire",
-    level: 45,
+    level: 85,
     photos: [
       "/ff/ff1.png",
       "/ff/ff2.png",
@@ -119,13 +118,10 @@ export const HobbySection = () => {
           <div className="space-y-16">
             {filteredGames.map((game) => (
               <div key={game.name}>
-                {/* 1. Judul dan Ikon tetap di atas */}
                 <div className="flex items-center gap-3 text-left mb-6">
                   <GameLevelIcon level={game.level} />
                   <h3 className="text-2xl font-semibold">{game.name}</h3>
                 </div>
-
-                {/* 2. Galeri Gambar */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                   {game.photos.map((photo, photoIndex) => (
                     <div
@@ -141,8 +137,6 @@ export const HobbySection = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* 3. Blok Level dipindahkan ke bawah galeri */}
                 <div className="mt-4">
                   <div className="w-full bg-slate-200 dark:bg-secondary/50 h-2 rounded-full overflow-hidden">
                     <div
@@ -152,7 +146,7 @@ export const HobbySection = () => {
                   </div>
                   <div className="text-right mt-1">
                     <span className="text-sm font-medium text-slate-500 dark:text-muted-foreground font-mono">
-                      Level {game.level}%
+                      Level {game.level}
                     </span>
                   </div>
                 </div>
@@ -162,13 +156,67 @@ export const HobbySection = () => {
         </div>
       </section>
 
-      {/* Bagian Modal/Popup tidak ada perubahan */}
+      {/* --- BAGIAN POPUP GAMBAR (MODAL) YANG DIKEMBALIKAN --- */}
       {activeImage.gallery && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex justify-center items-center p-4"
           onClick={handleCloseModal}
         >
-          {/* ... tombol-tombol navigasi dan gambar di dalam popup ... */}
+          {/* Tombol Navigasi Kiri */}
+          <button
+            className="absolute left-4 md:left-8 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
+            onClick={handlePrevImage}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+
+          {/* Gambar yang Diperbesar */}
+          <img
+            src={activeImage.gallery[activeImage.index]}
+            alt="Enlarged view"
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {/* Tombol Close */}
+          <button
+            className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 transition-colors z-10"
+            onClick={handleCloseModal}
+          >
+            &times;
+          </button>
+
+          {/* Tombol Navigasi Kanan */}
+          <button
+            className="absolute right-4 md:right-8 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
+            onClick={handleNextImage}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
         </div>
       )}
     </>
