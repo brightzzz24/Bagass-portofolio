@@ -4,10 +4,50 @@ import { Crown, Award, Check, ChevronsDown, Star } from "lucide-react";
 
 const games = [
   // Pastikan data Anda sudah terisi di sini
-  { name: "Honkai: Star Rail", level: 100, photos: [ "/hsr/hsr1.png", "/hsr/hsr2.png", "/hsr/hsr3.png", "/hsr/hsr4.png", "/hsr/hsr5.png" ]},
-  { name: "Honor Of Kings", level: 95, photos: [ "/hok/hok1.png", "/hok/hok2.png", "/hok/hok3.png", "/hok/hok4.png", "/hok/hok5.png" ]},
-  { name: "Free Fire", level: 45, photos: [ "/ff/ff1.png", "/ff/ff2.png", "/ff/ff3.png", "/ff/ff4.png", "/ff/ff5.png" ]},
-  { name: "Genshin Impact", level: 70, photos: [ "/gi/gi1.png", "/gi/gi2.png", "/gi/gi3.png", "/gi/gi4.png", "/gi/gi5.png" ]},
+  {
+    name: "Honkai: Star Rail",
+    level: 100,
+    photos: [
+      "/hsr/hsr1.png",
+      "/hsr/hsr2.png",
+      "/hsr/hsr3.png",
+      "/hsr/hsr4.png",
+      "/hsr/hsr5.png",
+    ],
+  },
+  {
+    name: "Honor Of Kings",
+    level: 95,
+    photos: [
+      "/hok/hok1.png",
+      "/hok/hok2.png",
+      "/hok/hok3.png",
+      "/hok/hok4.png",
+      "/hok/hok5.png",
+    ],
+  },
+  {
+    name: "Free Fire",
+    level: 45,
+    photos: [
+      "/ff/ff1.png",
+      "/ff/ff2.png",
+      "/ff/ff3.png",
+      "/ff/ff4.png",
+      "/ff/ff5.png",
+    ],
+  },
+  {
+    name: "Genshin Impact",
+    level: 70,
+    photos: [
+      "/gi/gi1.png",
+      "/gi/gi2.png",
+      "/gi/gi3.png",
+      "/gi/gi4.png",
+      "/gi/gi5.png",
+    ],
+  },
 ];
 
 const gameCategories = ["All", ...games.map((game) => game.name)];
@@ -30,10 +70,26 @@ export const HobbySection = () => {
       ? games
       : games.filter((game) => game.name === selectedGame);
 
-  const handleImageClick = (gamePhotos, photoIndex) => { setActiveImage({ gallery: gamePhotos, index: photoIndex }); };
-  const handleCloseModal = () => { setActiveImage({ gallery: null, index: 0 }); };
-  const handleNextImage = (e) => { e.stopPropagation(); setActiveImage(prev => ({ ...prev, index: (prev.index + 1) % prev.gallery.length })); };
-  const handlePrevImage = (e) => { e.stopPropagation(); setActiveImage(prev => ({ ...prev, index: (prev.index - 1 + prev.gallery.length) % prev.gallery.length })); };
+  const handleImageClick = (gamePhotos, photoIndex) => {
+    setActiveImage({ gallery: gamePhotos, index: photoIndex });
+  };
+  const handleCloseModal = () => {
+    setActiveImage({ gallery: null, index: 0 });
+  };
+  const handleNextImage = (e) => {
+    e.stopPropagation();
+    setActiveImage((prev) => ({
+      ...prev,
+      index: (prev.index + 1) % prev.gallery.length,
+    }));
+  };
+  const handlePrevImage = (e) => {
+    e.stopPropagation();
+    setActiveImage((prev) => ({
+      ...prev,
+      index: (prev.index - 1 + prev.gallery.length) % prev.gallery.length,
+    }));
+  };
 
   return (
     <>
@@ -45,7 +101,16 @@ export const HobbySection = () => {
 
           <div className="flex justify-center flex-wrap gap-4 mb-12">
             {gameCategories.map((category) => (
-              <button key={category} onClick={() => setSelectedGame(category)} className={cn("px-5 py-2 rounded-full transition-colors duration-300", selectedGame === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 hover:bg-primary/20")}>
+              <button
+                key={category}
+                onClick={() => setSelectedGame(category)}
+                className={cn(
+                  "px-5 py-2 rounded-full transition-colors duration-300",
+                  selectedGame === category
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary/70 hover:bg-primary/20"
+                )}
+              >
                 {category}
               </button>
             ))}
@@ -91,7 +156,6 @@ export const HobbySection = () => {
                     </span>
                   </div>
                 </div>
-
               </div>
             ))}
           </div>
@@ -100,7 +164,10 @@ export const HobbySection = () => {
 
       {/* Bagian Modal/Popup tidak ada perubahan */}
       {activeImage.gallery && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex justify-center items-center p-4" onClick={handleCloseModal}>
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex justify-center items-center p-4"
+          onClick={handleCloseModal}
+        >
           {/* ... tombol-tombol navigasi dan gambar di dalam popup ... */}
         </div>
       )}
