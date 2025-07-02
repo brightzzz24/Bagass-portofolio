@@ -1,5 +1,9 @@
-import { Navbar } from "../components/Navbar";
-import { StarBackground } from "../components/StarBackground";
+// src/pages/Home.jsx
+
+// Hapus impor Navbar dan StarBackground karena sudah ada di Layout.jsx
+// import { Navbar } from "../components/Navbar";
+// import { StarBackground } from "../components/StarBackground";
+
 import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
 import { SkillsSection } from "../components/SkillsSection";
@@ -10,12 +14,7 @@ import { HobbySection } from "../components/HobbySection";
 
 export const Home = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Background Effects */}
-      <StarBackground />
-      {/* Navbar */}
-      <Navbar />
-      {/* Main Content */}
+    <>
       <main>
         <HeroSection />
         <AboutSection />
@@ -25,8 +24,7 @@ export const Home = () => {
         <ContactSection />
       </main>
 
-      {/* Footer */}
       <Footer />
-    </div>
+    </>
   );
 };

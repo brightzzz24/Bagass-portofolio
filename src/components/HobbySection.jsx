@@ -5,7 +5,7 @@ const games = [
   // Pastikan data Anda sudah terisi di sini
   {
     name: "Honkai: Star Rail",
-    level: 90,
+    level: 100,
     photos: [
       "/hsr/hsr1.png",
       "/hsr/hsr2.png",
@@ -16,7 +16,7 @@ const games = [
   },
   {
     name: "Honor Of Kings",
-    level: 95,
+    level: 85,
     photos: [
       "/hok/hok1.png",
       "/hok/hok2.png",
@@ -27,7 +27,7 @@ const games = [
   },
   {
     name: "Free Fire",
-    level: 85,
+    level: 30,
     photos: [
       "/ff/ff1.png",
       "/ff/ff2.png",
